@@ -73,15 +73,22 @@
 
                     <div class="mb-3">
                         <label class="form-label">Bike Image</label>
-                        <input type="file" class="form-control" name="imageData" [(ngModel)]="bike.imageData" (change)="onFileSelected($event)"
-                            accept="image/png">
+                        <input type="file" class="form-control" name="imageData" [(ngModel)]="bike.imageData"
+                            (change)="onFileSelected($event)" accept="image/png">
                     </div>
 
-                    <!-- Buttons -->
-                    <div class="d-flex justify-content-end gap-2 mt-4">
-                        <button class="btn btn-secondary">← Back</button>
-                        <button class="btn btn-primary" (click)="saveBike(bikeForm)">Save</button>
+                    <div class="mb-3">
+                        <label class="form-label">Model Description</label>
+                        <textarea class="form-control" name="modelDescription" [(ngModel)]="bike.modelDescription"
+                            required minlength="6" rows="1" placeholder="Enter model description">
+                        </textarea>
                     </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <button class="btn btn-secondary">← Back</button>
+                            <button class="btn btn-primary" (click)="saveBike(bikeForm)">Save</button>
+                        </div>
                 </form>
             </div>
 

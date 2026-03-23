@@ -24,7 +24,8 @@ export class AddBikeComponent {
     weight: null,
     price: null,
     currencyId: null,
-    imageData: null
+    imageData: null,
+    modelDescription: null
   };
 
 
@@ -84,6 +85,8 @@ saveBike(bikeForm: any) {
     if (this.selectedFile) {
       formData.append('imageData', this.selectedFile);
     }
+
+    formData.append('modelDescription', this.bike.modelDescription);
 
     this.bikeService.addBike(formData).subscribe({
       next: (response) => {
