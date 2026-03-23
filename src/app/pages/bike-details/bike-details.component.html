@@ -1,0 +1,49 @@
+<div class="container mt-3 mt-md-5">
+
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h3>View Bike Details</h3>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+
+            <div class="card shadow-sm">
+                <div class="row g-0">
+
+                    <!-- IMAGE SECTION -->
+                    <div class="col-md-5 image-container">
+                        <img 
+                            [src]="bikes?.imageUrl" 
+                            [alt]="bikes?.manufacturer + ' ' + bikes?.model"
+                            class="img-fluid product-image"
+                        />
+                    </div>
+
+                    <!-- DETAILS SECTION -->
+                    <div class="col-md-7">
+                        <div class="card-body">
+
+                            <h4 class="card-title">{{bikes?.model}}</h4>
+
+                            <p class="mb-1"><strong>Manufacturer:</strong> {{ bikes?.manufacturer }}</p>
+                            <p class="mb-1"><strong>Category:</strong> {{ bikes?.category }}</p>
+                            <p class="mb-1"><strong>Description:</strong> {{ bikes?.modelDescription }}</p>
+                            <p class="mb-1"><strong>Colour:</strong> {{ bikes?.colour }}</p>
+                            <p class="mb-1"><strong>Weight:</strong> {{ bikes?.weight }} kg</p>
+
+                            <h5 class="text-success mt-3">{{ bikes?.price }}</h5>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="d-grid mt-4">
+                <button class="btn btn-secondary" (click)="goBack()">Back</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

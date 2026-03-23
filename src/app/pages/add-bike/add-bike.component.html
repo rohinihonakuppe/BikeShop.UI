@@ -1,0 +1,90 @@
+<div class="container mt-3 mt-md-5">
+    <div class="mb-4">
+        <h3>Add Bike</h3>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+
+            <div class="card shadow-sm p-4">
+
+                <form #bikeForm="ngForm">
+
+                    <!-- Model -->
+                    <div class="mb-3">
+                        <label class="form-label">Model</label>
+                        <input type="text" name="model" [(ngModel)]="bike.model" class="form-control"
+                            placeholder="Enter bike model">
+                    </div>
+
+                    <!-- Manufacturer -->
+                    <div class="mb-3">
+                        <label class="form-label">Manufacturer</label>
+                        <select class="form-select" name="manufacturer" [(ngModel)]="bike.manufacturerId">
+                            <option selected disabled>Select manufacturer</option>
+                            <option *ngFor="let manufacturer of manufacturers" [value]="manufacturer.id">
+                                {{ manufacturer.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" name="category" [(ngModel)]="bike.categoryId">
+                            <option selected disabled>Select category</option>
+                            <option *ngFor="let category of categories" [value]="category.id">
+                                {{ category.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Colour -->
+                    <div class="mb-3">
+                        <label class="form-label">Colour</label>
+                        <select class="form-select" name="colour" [(ngModel)]="bike.colourId">
+                            <option selected disabled>Select colour</option>
+                            <option *ngFor="let color of colors" [value]="color.id">
+                                {{ color.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Weight -->
+                    <div class="mb-3">
+                        <label class="form-label">Weight (kg)</label>
+                        <input type="number" name="weight" [(ngModel)]="bike.weight" class="form-control">
+                    </div>
+
+                    <!-- Price + Currency -->
+                    <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <div class="input-group">
+                            <select class="form-select" name="currency" [(ngModel)]="bike.currencyId"
+                                style="max-width: 120px;">
+                                <option *ngFor="let currency of currencies" [value]="currency.id">
+                                    {{ currency.name }}
+                                </option>
+                            </select>
+                            <input type="text" name="price" [(ngModel)]="bike.price" class="form-control"
+                                placeholder="Enter price">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Bike Image</label>
+                        <input type="file" class="form-control" name="imageData" [(ngModel)]="bike.imageData" (change)="onFileSelected($event)"
+                            accept="image/png">
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button class="btn btn-secondary">← Back</button>
+                        <button class="btn btn-primary" (click)="saveBike(bikeForm)">Save</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

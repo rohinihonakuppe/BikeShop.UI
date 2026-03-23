@@ -1,0 +1,56 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.back-btn:hover {
+  background-color: #555;
+}
+
+.product-card {
+  display: flex;
+  gap: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+}
+
+.image-section img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.details-section {
+  flex: 1;
+}
+
+.details-section h2 {
+  margin-bottom: 10px;
+}
+
+.price {
+  margin-top: 20px;
+  color: #2e7d32;
+  font-size: 24px;
+}
+
+.loading {
+  color: #666;
+}
+
+.error {
+  color: red;
+}
