@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="card-footer">
-        <button type="button" class="btn btn-orange" (click)="addBikeToFavourites(bike)">
+        <button type="button" class="btn" [ngClass]=" bike.isFavourite ? 'btn-success' : 'btn-orange'" (click)="addBikeToFavourites(bike)">
           {{ bike.isFavourite ? 'Go to Favourites' : 'Add to Favourites' }}
         </button>
         

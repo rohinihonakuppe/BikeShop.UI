@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.bikeService.getBikes().subscribe({
       next: (response) => {
        
-        console.log(response);
+        console.log('Response get all:', response);
          this.bikes = response.Data;
       },
       error: (error) => console.log('Error: ', error)

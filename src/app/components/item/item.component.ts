@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent {
-  @Input() bike: any;
+@Input() bike: any;
  @Output() addToFavourites = new EventEmitter<any>();
     private router = inject(Router);
 
 
 addBikeToFavourites(bike: any) {
-  this.addToFavourites.emit(bike);
+  let obj = {productId: bike.id }
+  this.addToFavourites.emit(obj);
 }
   viewDetails(bike:any){
      this.router.navigate(['/bike', bike.id]);
